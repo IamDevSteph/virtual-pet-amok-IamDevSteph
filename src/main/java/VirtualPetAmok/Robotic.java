@@ -12,6 +12,9 @@ public abstract class Robotic extends VirtualPet{
     public int getOilLevel(){
         return oilLevel;
     }
+    Robotic(){
+        super();
+    }
 
     public Robotic(String name, int healthLevel, int happiness, int conditionLevel, int oilLevel){
         super(name, healthLevel, happiness);
@@ -19,7 +22,7 @@ public abstract class Robotic extends VirtualPet{
         this.oilLevel = oilLevel;
     }
 
-    public void oilRobots(Robotic robotPet) {
+    public void oilRobots() {
         oilLevel +=20;
 
     }

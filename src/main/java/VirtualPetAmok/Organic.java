@@ -19,12 +19,16 @@ public abstract class Organic extends VirtualPet {
         return poopInventory;
     }
 
-    public Organic(String name, int happiness, int healthLevel, int hungerLevel, int waterLevel, int poopInventory){
-        this.healthLevel = 100;
-        this.hungerLevel = 25;
-        this.waterLevel = 25;
-        this.poopInventory = 25;
+    Organic(){
     }
+
+    public Organic(String name, int happiness, int healthLevel, int hungerLevel, int waterLevel, int poopInventory){
+        this.healthLevel = healthLevel;
+        this.hungerLevel = hungerLevel;
+        this.waterLevel = waterLevel;
+        this.poopInventory = poopInventory;
+    }
+    //I decided to default the organic pet health levels at 100. Kinda like a video game. This was giving me trouble in my testing but I noticed I had actually defaulted it lol.
 
     public void feed(){
         hungerLevel += 10;
@@ -45,9 +49,5 @@ public abstract class Organic extends VirtualPet {
         hungerLevel -=10;
         waterLevel ++;
 
-    }
-    public void walkTheDogs(){
-            poopInventory-=5;
-            happiness+=5;
     }
 }

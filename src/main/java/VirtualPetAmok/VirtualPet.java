@@ -31,4 +31,9 @@ public abstract class VirtualPet {
         happiness +=10;
     }
 
+    public void walkTheDogs(){
+
+    }
+
+
 }

@@ -2,21 +2,20 @@ package VirtualPetAmok;
 
 public class Dog extends Organic implements PuppyDuties{
 
-    Dog dog = new Dog("UnderDog", 20,20,20,20,20,5);
-
     private int cage;
 
     public int getCage(){
         return cage;
     }
 
+    Dog(){
+        super();
+    }
 
     public Dog(String name, int happiness, int healthLevel, int hungerLevel, int waterLevel, int poopInventory, int cage){
         super(name, happiness, healthLevel, hungerLevel, waterLevel, poopInventory);
         this.cage = cage;
     }
-
-
 
     public void cageNeedsCleaning() {
         cage -= 20;
@@ -29,18 +28,16 @@ public class Dog extends Organic implements PuppyDuties{
 
     }
 
-//    @Override
-//    public void tick() {
-//        happiness--;
-//
+    @Override
+    public void walkTheDogs() {
+        healthLevel+=5;
+        happiness+=5;
 
     }
+}
 
 
-//    @Override
-//    public void calculateHappiness() {
-//        return ;
-//    }
+
 //
 //    @Override
 //    public void walkTheDogs(Dog bioDog) {

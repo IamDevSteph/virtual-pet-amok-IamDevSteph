@@ -8,8 +8,9 @@ public class VirtualPetShelter {
 
         Map<String, Organic> bioList = new HashMap<>();
         Map<String, Robotic> roboticList = new HashMap<>();
-        private int roboticID;
-        private int organicID;
+//        private int roboticID;
+//        //Considering deleting organicID and just have roboticID as an array list, numerical values as a pet microchip.
+//        private int organicID;
 
         public Collection<Robotic> getAllMechs(){
             return roboticList.values();
@@ -20,14 +21,25 @@ public class VirtualPetShelter {
         }
 
         public void addRobotPet(VirtualPet roboticToAdd){
-            roboticID++;
+//            roboticID++;
             roboticList.put(roboticToAdd.getName(), (Robotic) roboticToAdd);
         }
 
+        public void removeRobotPet(Robotic robotToRemove){
+        roboticList.remove(robotToRemove.getName(), robotToRemove);
+
+        }
+
+
         public void addBioPet(Organic organicToAdd){
-            organicID++;
+//            organicID++;
             bioList.put(organicToAdd.getName(), organicToAdd);
         }
+
+        public void removeBioPet(Organic organicToRemove){
+            bioList.remove(organicToRemove.getName(), organicToRemove);
+        }
+
         public VirtualPet findBioPet(String petName){
             return bioList.get(petName);
         }
@@ -35,6 +47,5 @@ public class VirtualPetShelter {
             return roboticList.get(petName);
         }
 
-
-
     }
+
