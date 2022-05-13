@@ -20,6 +20,7 @@ public abstract class Organic extends VirtualPet {
     }
 
     Organic(){
+        super();
     }
 
     public Organic(String name, int happiness, int healthLevel, int hungerLevel, int waterLevel, int poopInventory){

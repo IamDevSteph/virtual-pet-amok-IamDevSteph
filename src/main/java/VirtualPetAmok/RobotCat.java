@@ -17,4 +17,11 @@ public class RobotCat extends Robotic{
         oilLevel -=5;
     }
 
+    public void tick(){
+        happiness--;
+        healthLevel--;
+        conditionLevel--;
+        oilLevel--;
+    }
+
 }

@@ -26,4 +26,10 @@ public class RobotDog extends Robotic implements PuppyDuties{
         oilLevel -=5;
     }
 
+    public void tick(){
+
+    }
+
+
+
 }

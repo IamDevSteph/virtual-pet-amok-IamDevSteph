@@ -1,6 +1,5 @@
 package VirtualPetAmok;
 
-import net.bytebuddy.implementation.bind.MethodDelegationBinder;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
@@ -17,15 +16,22 @@ public class PetMethodTest {
     Dog normalPuppy = new Dog("Eve", 15, 100, 15, 15, 15, 20);
 
     @Test
-    public void shouldAddRobotPets() {
-        underTestShelter.addRobotPet(battleKitty);
-        underTestShelter.addRobotPet(battlePuppy);
-        Collection<Robotic> addRoboticPets = underTestShelter.getAllMechs();
-        VirtualPet foundRobotCat = underTestShelter.findRobotPet("Fluffy");
-        VirtualPet foundRobotDog = underTestShelter.findRobotPet("Fifi");
+    public void shouldAddAllPets() {
+        underTestShelter.addPet(battleKitty);
+        underTestShelter.addPet(battlePuppy);
+        underTestShelter.addPet(normalKitty);
+        underTestShelter.addPet(normalPuppy);
+        Collection<VirtualPet> AllPets = underTestShelter.AllPets();
+        VirtualPet foundRobotCat = underTestShelter.findPet("Fluffy");
+        VirtualPet foundRobotDog = underTestShelter.findPet("Fifi");
+        VirtualPet foundBioCat = underTestShelter.findPet("Steve");
+        VirtualPet foundBioDog = underTestShelter.findPet("Eve");
         assertEquals("Fluffy", foundRobotCat.getName());
         assertEquals("Fifi", foundRobotDog.getName());
+        assertEquals("Steve", foundBioCat.getName());
+        assertEquals("Eve", foundBioDog.getName());
     }
+
 
     @Test
     public void shouldCleanDogCages() {
@@ -78,14 +84,14 @@ public class PetMethodTest {
 
     @Test
     public void shouldRemoveARoboticPet(){
-        underTestShelter.removeRobotPet(battlePuppy);
-        VirtualPet findRoboPuppy = underTestShelter.findRobotPet("Fluffy");
+        underTestShelter.removePet(battlePuppy);
+        VirtualPet findRoboPuppy = underTestShelter.findPet("Fluffy");
         assertEquals(findRoboPuppy, null);
     }
     @Test
     public void shouldRemoveBioPet(){
-        underTestShelter.removeBioPet(normalKitty);
-        VirtualPet findBioKitty = underTestShelter.findBioPet("Steve");
+        underTestShelter.removePet(normalKitty);
+        VirtualPet findBioKitty = underTestShelter.findPet("Steve");
         assertEquals(findBioKitty, null);
     }
 
@@ -130,6 +136,8 @@ public class PetMethodTest {
         int hyperKitty = normalKitty.getBoredom();
         assertEquals(0, hyperKitty);
     }
+
+
 }
 
 
