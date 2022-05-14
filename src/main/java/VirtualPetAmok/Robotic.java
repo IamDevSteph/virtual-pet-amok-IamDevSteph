@@ -35,4 +35,10 @@ public abstract class Robotic extends VirtualPet{
         oilLevel -= 10;
     }
 
+    @Override
+    public void tickAll(){
+        conditionLevel--;
+        oilLevel--;
+    }
+
 }

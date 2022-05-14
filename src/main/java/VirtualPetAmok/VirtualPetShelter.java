@@ -24,6 +24,7 @@ public class VirtualPetShelter implements PuppyDuties{
         public VirtualPet findPet(String petName){
             return listAllPets.get(petName);
         }
+
         public void showListOfAmokPets(){
             for(String amokPets : listAllPets.keySet()){
                 System.out.println(amokPets);
@@ -31,10 +32,30 @@ public class VirtualPetShelter implements PuppyDuties{
             }
         }
 
-        public void showAmokStats(){
-            for(VirtualPet pets : listAllPets.values());
-            System.out.println();
+        public void showCatStats(){
+            for(VirtualPet bioCat : listAllPets.values()) {
+                if(bioCat instanceof Cat)
+                System.out.println("Cat name: " + bioCat.getName() + "|" + "Happiness : " + bioCat.getHappiness() + "|" + "Health: " + bioCat.getHealthLevel() + "|" + "Hunger: " + ((Cat) bioCat).getHungerLevel() + "|" + "Water: " + ((Cat) bioCat).getWaterLevel() + "|" + "Boredom: " + ((Cat) bioCat).getBoredom() + "|" + "Litter Box: " + ((Cat) bioCat).getLitterBox());
+            }
             //Display pet name and traits ^
+        }
+        public void showDogStats(){
+            for(VirtualPet bioDog : listAllPets.values()){
+                if(bioDog instanceof Dog)
+                    System.out.println("Dog name: " + bioDog.getName() + "|" + "Happiness : " + bioDog.getHappiness() + "|" + "Health: " + bioDog.getHealthLevel() + "|" + "Hunger: " + ((Dog) bioDog).getHungerLevel() + "|" + "Thirst: " + ((Dog) bioDog).getWaterLevel() + "|" + "Poop Inventory: " + ((Dog) bioDog).getPoopInventory() + "|" + "Cage dirtiness: " + ((Dog) bioDog).getCage());
+                }
+        }
+        public void showRoboDogStats(){
+            for(VirtualPet roboDog : listAllPets.values()){
+                if(roboDog instanceof RobotDog)
+                    System.out.println("Robot Dog name: " + roboDog.getName() + "|" + "Health: " + roboDog.getHealthLevel() + "|" + "Condition: " + ((RobotDog) roboDog).getConditionLevel() + "|" + "Oil Level: " + ((RobotDog) roboDog).getOilLevel());
+            }
+        }
+        public void showRoboCatStats(){
+            for(VirtualPet roboCat : listAllPets.values()){
+                if(roboCat instanceof RobotCat)
+                    System.out.println("Robot Cat name: " + roboCat.getName() + "|" + "Happiness: " + roboCat.getHappiness() + "|" + "Health: " + roboCat.getHealthLevel() + "|" + "Condition: " + ((RobotCat) roboCat).getConditionLevel() + "|" + "Oil Level: " + ((RobotCat) roboCat).getOilLevel());
+            }
         }
 
         public void oilRobots(){
@@ -111,6 +132,12 @@ public class VirtualPetShelter implements PuppyDuties{
                 if(pet instanceof VirtualPet){
 
                 }
+            }
+        }
+
+        public void tickAll(){
+            for(VirtualPet pet : listAllPets.values()){
+                pet.tickAll();
             }
         }
 

@@ -17,7 +17,8 @@ public class RobotCat extends Robotic{
         oilLevel -=5;
     }
 
-    public void tick(){
+    @Override
+    public void tickAll(){
         happiness--;
         healthLevel--;
         conditionLevel--;

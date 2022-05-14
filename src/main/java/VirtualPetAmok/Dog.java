@@ -34,4 +34,13 @@ public class Dog extends Organic implements PuppyDuties{
         happiness+=5;
 
     }
+    @Override
+    public void tickAll(){
+        healthLevel++;
+        happiness++;
+        hungerLevel--;
+        waterLevel--;
+        poopInventory++;
+        cage++;
+    }
 }

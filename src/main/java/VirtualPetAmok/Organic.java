@@ -24,6 +24,7 @@ public abstract class Organic extends VirtualPet {
     }
 
     public Organic(String name, int happiness, int healthLevel, int hungerLevel, int waterLevel, int poopInventory){
+        super(name, healthLevel, happiness);
         this.healthLevel = healthLevel;
         this.hungerLevel = hungerLevel;
         this.waterLevel = waterLevel;
@@ -50,5 +51,14 @@ public abstract class Organic extends VirtualPet {
         hungerLevel -=10;
         waterLevel ++;
 
+    }
+
+    @Override
+    public void tickAll(){
+        healthLevel++;
+        happiness++;
+        hungerLevel--;
+        waterLevel--;
+        poopInventory++;
     }
 }

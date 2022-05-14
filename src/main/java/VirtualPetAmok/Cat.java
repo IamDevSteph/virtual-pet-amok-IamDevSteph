@@ -44,14 +44,14 @@ public class Cat extends Organic{
             hungerLevel=1;
     }
 
-    public void tick(){
+    @Override
+    public void tickAll(){
         hungerLevel++;
         happiness--;
         healthLevel--;
         waterLevel--;
         boredom--;
         cleanLitterBox++;
-
     }
 
 }

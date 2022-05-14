@@ -34,6 +34,9 @@ public abstract class VirtualPet {
     public void walkTheDogs(){
 
     }
+    public void tickAll(){
+
+    }
 
 
 }
