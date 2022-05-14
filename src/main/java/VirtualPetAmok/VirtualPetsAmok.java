@@ -22,6 +22,7 @@ public class VirtualPetsAmok {
 
         String userChoice;
         String userChoice2;
+        String userChoice3;
 
 
         System.out.println("Welcome to Stephanie's virtual pet amok!");
@@ -34,16 +35,27 @@ public class VirtualPetsAmok {
         System.out.println("");
         System.out.println("Thank you " + userChoice + " for being brave enough to take on this task!");
 
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+        myVirtualPetShelter.showCatStats();
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+        myVirtualPetShelter.showDogStats();
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+        myVirtualPetShelter.showRoboCatStats();
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+        myVirtualPetShelter.showRoboDogStats();
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+
+
         do {
-            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
-            myVirtualPetShelter.showCatStats();
-            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
-            myVirtualPetShelter.showDogStats();
-            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
-            myVirtualPetShelter.showRoboCatStats();
-            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
-            myVirtualPetShelter.showRoboDogStats();
-            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+//            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+//            myVirtualPetShelter.showCatStats();
+//            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+//            myVirtualPetShelter.showDogStats();
+//            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+//            myVirtualPetShelter.showRoboCatStats();
+//            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+//            myVirtualPetShelter.showRoboDogStats();
+//            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
 
 
             System.out.println("What would you like to do?");
@@ -68,7 +80,9 @@ public class VirtualPetsAmok {
             System.out.println("");
             System.out.println("Press 9 to walk the dogs");
             System.out.println("");
-            System.out.println("Press 10 to clean the litter box and dog cages");
+            System.out.println("Type 10 to clean the litter box and dog cages");
+            System.out.println("");
+            System.out.println("Type 11 to check their status");
             userChoice = input.nextLine();
 
             if (userChoice.equals("1")) {
@@ -103,29 +117,36 @@ public class VirtualPetsAmok {
                 System.out.println("B" + ") Cat");
                 System.out.println("C" + ") RobotDog");
                 System.out.println("D" + ") RobotCat");
+                userChoice = input.nextLine();
+
                 if (userChoice.equals("A")) {
                     System.out.println("What will you name your dog?");
                     String dogName = input.nextLine();
                     VirtualPet newDog = new Dog(dogName, 10, 10, 10, 10, 10, 0);
+                    myVirtualPetShelter.addPet(newDog);
 
                 }
                 if (userChoice.equals("B")) {
                     System.out.println("What will you name your cat?");
                     String catName = input.nextLine();
                     VirtualPet newCat = new Cat(catName, 10, 10, 10, 10, 10, 0);
+                    myVirtualPetShelter.addPet(newCat);
 
                 }
                 if (userChoice.equals("C")) {
                     System.out.println("What will you name your robot dog?");
                     String roboDogName = input.nextLine();
                     VirtualPet newRoboDog = new RobotDog(roboDogName, 10, 10, 10, 10);
+                    myVirtualPetShelter.addPet(newRoboDog);
 
                 }
-                if (userChoice.equals("D")) {
+                else if (userChoice.equals("D")) {
                     System.out.println("What will you name your robot cat?");
                     String roboCatName = input.nextLine();
                     VirtualPet newRoboCat = new RobotCat(roboCatName, 10, 10, 10, 10);
+                    myVirtualPetShelter.addPet(newRoboCat);
                 }
+
             }if(userChoice.equals("7")){
                 System.out.println("Let's repair our robotic friends");
                 myVirtualPetShelter.repairRobots();
@@ -147,9 +168,21 @@ public class VirtualPetsAmok {
                 myVirtualPetShelter.cageNeedsCleaning();
                 myVirtualPetShelter.litterBoxNeedsCleaning();
             }
+            if(userChoice.equals("11")){
+                System.out.println("Let's check their status");
+                System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+                myVirtualPetShelter.showCatStats();
+                System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+                myVirtualPetShelter.showDogStats();
+                System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+                myVirtualPetShelter.showRoboCatStats();
+                System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+                myVirtualPetShelter.showRoboDogStats();
+                System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+            }
 
 
-        }while (!userChoice.equals("11"));
+        }while (!userChoice.equals("12"));
             System.out.println("You have decided to clock out for the day");
             System.out.println("");
             System.out.println("THank you for helping me with my shelter! It was running amok!");
@@ -157,7 +190,7 @@ public class VirtualPetsAmok {
             myVirtualPetShelter.tickAll();
 
     }
-    
+
 }
 
 
