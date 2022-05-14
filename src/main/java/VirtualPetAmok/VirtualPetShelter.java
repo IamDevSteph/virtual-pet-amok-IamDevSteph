@@ -134,6 +134,14 @@ public class VirtualPetShelter implements PuppyDuties{
                 }
             }
         }
+        public void useCatNip(){
+            for(VirtualPet pet : listAllPets.values()){
+                if(pet instanceof Cat){
+                    Cat organicPet = (Cat) pet;
+                    organicPet.useCatNip();
+                }
+            }
+        }
 
         public void tickAll(){
             for(VirtualPet pet : listAllPets.values()){

@@ -68,7 +68,7 @@ public class VirtualPetsAmok {
             System.out.println("");
             System.out.println("Press 3 to drop the kids off the super bowl");
             System.out.println("");
-            System.out.println("Press 4 to clean their cage");
+            System.out.println("Press 4 to play with all pets");
             System.out.println("");
             System.out.println("Press 5 to adopt out a pet");
             System.out.println("");
@@ -101,8 +101,9 @@ public class VirtualPetsAmok {
 
             }
             if (userChoice.equals("4")) {
-                System.out.println("You have decided to clean their cage");
-                myVirtualPetShelter.cageNeedsCleaning();
+                System.out.println("Let's play!");
+                myVirtualPetShelter.playWithPets();
+                myVirtualPetShelter.useCatNip();
             }
             if (userChoice.equals("5")) {
                 System.out.println("Who would you like to adopt out?");
