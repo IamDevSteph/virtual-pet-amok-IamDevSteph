@@ -83,6 +83,8 @@ public class VirtualPetsAmok {
             System.out.println("Type 10 to clean the litter box and dog cages");
             System.out.println("");
             System.out.println("Type 11 to check their status");
+            System.out.println("");
+            System.out.println("Type 12 to clock out for the day");
             userChoice = input.nextLine();
 
             if (userChoice.equals("1")) {
